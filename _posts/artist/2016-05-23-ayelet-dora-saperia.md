@@ -1,5 +1,6 @@
 ---
 layout: artist
+category: artist
 title: אילת דורה ספיריה
 field: קרמיקה
 

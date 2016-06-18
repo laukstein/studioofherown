@@ -1,5 +1,6 @@
 ---
 layout: artist
+category: artist
 title: אורה שוורץ
 field: איור
 
