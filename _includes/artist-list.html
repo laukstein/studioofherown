@@ -1,0 +1,7 @@
+<ol class=list>{% assign pages=site.posts | sort: "title" %}{%
+    for artist in pages %}{%
+        if artist.layout == "artist" %}
+    <li><a href="{{ artist.url | prepend: site.baseurl }}">{{ artist.title }}</a>{%
+    endif %}{%
+endfor %}
+</ol>

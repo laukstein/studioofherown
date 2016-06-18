@@ -1,20 +1,32 @@
-<!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
-</html>
+<!doctype html>
+<html lang=he>
+<head prefix="og: http://ogp.me/ns#">
+<meta charset=utf-8>
+<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+<meta name=robots content=noindex>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=stylesheet href={{ "/css/style.css" | prepend: site.baseurl }}>
+<div class=noscroll>
+<div class="~full wrapper" dir=rtl>
+<div class="~size ~space container">
+<header class="~full header">
+<div class="~size ~clearfix">
+    <ul class=nav>
+        <li><a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 242"><path d="M216 162h-27V27H27v189h108v26H0V0h216v162zM54 189V54h108v135h-54v-27h27V81H81v108H54z"/></svg>{{ site.title }}</span></a>{% assign pages=site.posts | sort: 'order' %}{%
+        for nav in pages | nav.order && nav.title %}{%
+            if nav.order && nav.title %}
+        <li><a{% if nav.url == page.url %} class=active{% endif %} href="{{ nav.url | prepend: site.baseurl }}"><span>{{ nav.title }}</span></a>{%
+            endif %}{%
+        endfor %}
+    </ul>
+    <div class=shadow></div>
+</div>
+</header>
+<main class=main>
+{{ content }}</main>
+</div>
+<ul class="~size ~space footer">
+    <li>{{ site.title }} <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+</ul>
+</div>
+</div>

@@ -1,0 +1,400 @@
+@viewport {
+    width: device-width;
+}
+html,
+body {
+    height: 100%;
+}
+html,
+label,
+button {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+html {
+    overflow-y: scroll;
+    max-width: 100%;
+    color: #333;
+    font: 62.45% / 1.6 sans-serif;
+    text-rendering: optimizeSpeed;
+    background-color: #fff;
+    touch-action: manipulation;
+    cursor: default;
+}
+body {
+    margin: 0;
+    font-size: 2em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-hyphenate-limit-chars: 6 3 2;
+        hyphenate-limit-chars: 6 3 2;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+main {
+    display: block;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+}
+h1,
+h2,
+h3 {
+    line-height: 1.07;
+    font-weight: normal;
+}
+h1,
+h2 {
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+h1:first-line,
+h2:first-line {
+    font-size: 150%;
+}
+h1 {
+    font-size: 1.9em;
+}
+h2,
+h3 {
+    font-size: 1.45em;
+}
+p {
+    margin-top: .8em;
+    margin-bottom: .8em;
+}
+p + p {
+    margin-top: 1.6em;
+}
+br {
+    word-spacing: 0;
+}
+hr {
+    position: relative; /* :target:before issue */
+    margin: 1em -3em;
+    margin-right: -4.9vw;
+    margin-left: -4.9vw;
+    clear: both;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+a img,
+abbr,
+iframe {
+    border: 0;
+}
+a,
+img {
+    -webkit-user-drag: none;
+            user-drag: none;
+}
+a {
+    color: #00d;
+    /* font-family: inherit; */
+    text-decoration: none;
+    outline: none;
+    pointer-events: auto;
+    -webkit-box-decoration-break: clone; /* Chrome legacy, demo http://jsbin.com/xojoro/quiet */
+            box-decoration-break: clone;
+}
+a:hover,
+a:focus {
+    color: #02a;
+    text-decoration: underline;
+}
+a[target=_blank] {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+img {
+    width: auto;
+    /* max-width: 100%; */
+    max-width: 2em;
+    height: auto;
+    vertical-align: top;
+    object-fit: contain;
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+ */
+    image-rendering: -webkit-optimize-contrast; /* Webkit will drop this property https://bugs.webkit.org/show_bug.cgi?id=97991#c5 */
+    image-rendering: -moz-crisp-edges; /* Firefox legacy */
+    image-rendering:      crisp-edges;
+    image-rendering: pixelated; /* Eaquals non standard "optimizeSpeed" */
+}
+abbr {
+    border-bottom: 1px dotted #aaa;
+}
+::selection {
+    color: initial;
+    text-shadow: none;
+    background-color: rgba(255,255,60,.3);
+}
+html,
+.\~full {
+    width: 100%;
+    /* width: 100vw; */
+}
+/* CSS escapes https://mothereff.in/css-escapes */
+.\~size {
+    min-width: 13.6em;
+    /* max-width: 47.45em; */
+    max-width: 47.407em;
+    margin: auto;
+    box-sizing: border-box;
+
+
+    /* border: 1px solid rgba(0,0,0,.3); */
+    /* background-color: rgba(0,0,0,.02); */
+}
+.\~space {
+    padding-right: 4.6em;
+    padding-right: 4.9vw;
+    padding-left: 4.6em;
+    padding-left: 4.9vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.\~clearfix:after {
+    /* Clearfix http://cssmojo.com/the-very-latest-clearfix-reloaded/ */
+    content: "";
+    display: block;
+    clear: both;
+}
+.noscroll {
+    /* overflow: hidden; */
+}
+.container {
+    overflow: hidden;
+    padding-top: 5em;
+    padding-bottom: 7.1em;
+    min-height: 100vh;
+    background-color: #fff;
+}
+.header {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background-color: #000;
+}
+.nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    max-width: 100%;
+    padding: 2.3em 0 0;
+    margin: 0;
+    font-size: 108%;
+    text-align: center;
+    white-space: nowrap;
+    will-change: transform;
+}
+.nav li {
+    overflow: hidden;
+    display: inline-block;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    -webkit-box-pack: center;
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+    min-width: 1px;
+    margin-left: 1px;
+    /* vertical-align: top; */
+}
+.nav li:last-child {
+    margin-left: 0;
+}
+.nav a {
+    display: block;
+    width: 100%;
+    padding: .4em;
+    padding-right: .6vw;
+    padding-left: .6vw;
+    /* min-height: 100%; */
+    /* color: inherit; */
+    color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.nav a:hover,
+.nav a:focus {
+    /* background-color: #f6f6f6; */
+}
+.nav a:active,
+.nav a.active {
+    /* background-color: #eee; */
+}
+a.logo {
+    fill: currentColor;
+    text-decoration: none;
+}
+.logo svg {
+    margin-left: .3em;
+    width: 1.1em;
+    fill: currentColor;
+    vertical-align: top;
+}
+.nav span {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
+.shadow {
+    overflow: hidden;
+    position: absolute;
+    bottom: -3.5em;
+    right: 0;
+    left: 0;
+    height: 3.5em;
+    pointer-events: none;
+}
+.shadow:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -.5em;
+    right: -1em;
+    left: -1em;
+    pointer-events: none;
+    border-top: .25em solid #fff;
+    box-shadow: 0 0 2.3em 2em #fff;
+}
+.main {
+    padding-top: 2.3em;
+    padding-bottom: 2.5em;
+    padding-bottom: 4vw;
+}
+.main :target:before {
+    content: "";
+    display: block;
+    height: 2.5em;
+    margin-top: -2.5em;
+    pointer-events: none;
+}
+.list {
+    float: left
+}
+.footer {
+    height: 3.7em;
+    margin-top: -3.7em;
+    padding-top: 1em;
+    list-style: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    border-top: 1px solid #e1e1e1;
+}
+@media (-webkit-min-device-pixel-ratio: 0) {
+    .nav span {
+        text-overflow: clip;
+        -webkit-mask: linear-gradient(to right, rgba(51,51,51,0), #333 3vw, #333);
+                mask: linear-gradient(to right, rgba(51,51,51,0), #333 3vw, #333);
+    }
+}
+@media (max-width: 720px) {
+    html {
+        background-color: #fff;
+    }
+    html.noscroll {
+        overflow: hidden;
+    }
+    blockquote {
+        margin-left: -1.9em;
+        margin-right: -1.9em;
+        padding-left: calc(1.9em - .35em);
+        padding-right: 1.9em;
+    }
+}
+@media (max-width: 480px) {
+    html {
+        font-size: 58%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.15em;
+    }
+    h3 {
+        font-size: 1.3em;
+    }
+}
+
+
+
+
+
+
+
+/* Scale hack http://codepen.io/MadeByMike/pen/0dbc9b82769c3e2a0cbfc3192bcaabd3
+   fluid typography https://www.smashingmagazine.com/2016/05/fluid-typography/
+*/
+/* @media (min-width: 20rem) {
+    body {
+        font-size: calc(.8rem + 1.2 * ((100vw - 20rem) / 30));
+    }
+}
+@media (min-width: 50rem) {
+    body {
+        font-size: 2rem;
+    }
+}
+p {
+    margin-bottom: 1.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+h1 {
+    font-size: 2rem;
+    margin-top: calc((1.5rem - 2rem) + 1.5rem);
+}
+h2 {
+    font-size: 1.5rem;
+    margin-top: calc((1.5rem - 1.5rem) + 1.5rem*2);
+}
+h3 {
+    font-size: 1.25rem;
+    margin-top: calc((1.5rem - 1.25rem) + 1.5rem*2);
+}
+h4 {
+    font-size: 1rem;
+    margin-top: calc((1.5rem - 1rem) + 1.5rem*2);
+}
+h5 {
+    font-size: .875rem;
+    margin-top: calc((1.5rem - 0.875rem) + 1.5rem*2);
+} */
+
+/* Alef Hebrew (Hebrew) http://www.google.com/fonts/earlyaccess */
+@font-face {
+  font-family: AlefHebrew;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(alef-regular.eot);
+  src: url(alef-regular.eot?#iefix) format("embedded-opentype"),
+       url(alef-regular.woff2) format("woff2"),
+       url(alef-regular.woff) format("woff"),
+       url(alef-regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: AlefHebrew;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(alef-bold.eot);
+  src: url(alef-bold.eot?#iefix) format("embedded-opentype"),
+       url(alef-bold.woff2) format("woff2"),
+       url(alef-bold.woff) format("woff"),
+       url(alef-bold.ttf) format("truetype");
+}

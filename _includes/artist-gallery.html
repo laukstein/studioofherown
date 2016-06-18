@@ -1,0 +1,6 @@
+{% capture assets %}/assets{{ page.url }}{% endcapture %}{% assign imageNr = 0 %}<ol>{% for image in site.static_files %}{%
+    if image.path contains assets %}{% unless image.path contains "profile" %}{% assign imageNr = imageNr | plus: 1 %}
+    <li><img src="{{ image.path }}" alt="">{% capture name %}i{{ imageNr }}{% endcapture %}{{ page[name] }}{% endunless %}{%
+    endif %}{%
+    endfor %}
+</ol>
