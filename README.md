@@ -11,8 +11,7 @@ Located under [_posts](_posts) and prioritized by `order: Number`.
 ## Artist schema
 
 * [_posts/artist](_posts/artist)/2016-05-23-*name-surename*.md
-* [assets/artist](assets/artist)/*name-surename*/profile.jpg
-* [assets/artist](assets/artist)*name-surename*/1.jpg
+* [assets/artist](assets/artist)/*name-surename*/profile.jpg | *.jpg
 
 
 ## License
