@@ -2,10 +2,14 @@
 layout: default
 ---
 
-<ol>{% assign pages=site.posts | sort: "title" %}{%
+<div class="box ~clearfix">{% assign pages=site.posts | sort: "title" %}{%
     for item in pages %}{%
         if item.layout == "artist" %}
-    <li><a href="{{ item.url }}"><img src="/assets{{ item.url }}/profile.jpg" alt="">{{ item.title }} - {{ item.field }}</a>{%
+    <a href="{{ item.url }}" title="{{ item.title }}">
+        <div class=image style="background-image:url(/assets{{ item.url }}/profile.jpg)"></div>
+        <div class=title>{{ item.title }}</div>
+        <span class=field>{{ item.field }}</span>
+    </a>{%
     endif %}{%
 endfor %}
-</ol>
+</div>

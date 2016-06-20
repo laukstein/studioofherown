@@ -5,8 +5,9 @@
 <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 <meta name=robots content=noindex>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=stylesheet href={{ "/css/style.css" | prepend: site.baseurl }}>
-<div class=noscroll>
+<link rel=stylesheet href=/css/style.css>
+<!--[if lt IE 9]><script src=//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js></script><![endif]-->
+<body class=~clearfix>
 <div class="~full wrapper" dir=rtl>
 <div class="~size ~space container">
 <header class="~full header">
@@ -22,11 +23,12 @@
     <div class=shadow></div>
 </div>
 </header>
-<main class=main>
+<main class="main ~clearfix">
 {{ content }}</main>
 </div>
-<ul class="~size ~space footer">
-    <li>{{ site.title }} <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-</ul>
-</div>
+<footer class=footer>
+    <div class="~size ~space">
+        {{ site.title }} <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+</footer>
 </div>

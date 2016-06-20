@@ -5,27 +5,24 @@ html,
 body {
     height: 100%;
 }
-html,
-label,
-button {
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-width: 100%;
+    color: #333;
+    font: 62.45% / 1.5 sans-serif;
+    text-rendering: optimizeSpeed;
+    background-color: #fff;
+    touch-action: manipulation;
+    cursor: default;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
 }
-html {
-    overflow-y: scroll;
-    max-width: 100%;
-    color: #333;
-    font: 62.45% / 1.6 sans-serif;
-    text-rendering: optimizeSpeed;
-    background-color: #fff;
-    touch-action: manipulation;
-    cursor: default;
-}
 body {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.7em;
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-hyphenate-limit-chars: 6 3 2;
@@ -42,15 +39,11 @@ main {
             user-select: text;
 }
 h1,
-h2,
-h3 {
-    line-height: 1.07;
-    font-weight: normal;
-}
-h1,
 h2 {
     margin-top: .2em;
     margin-bottom: .2em;
+    line-height: 1.07;
+    font-weight: normal;
 }
 h1:first-line,
 h2:first-line {
@@ -59,8 +52,7 @@ h2:first-line {
 h1 {
     font-size: 1.9em;
 }
-h2,
-h3 {
+h2 {
     font-size: 1.45em;
 }
 p {
@@ -68,13 +60,12 @@ p {
     margin-bottom: .8em;
 }
 p + p {
-    margin-top: 1.6em;
+    margin-top: 1em;
 }
 br {
     word-spacing: 0;
 }
 hr {
-    position: relative; /* :target:before issue */
     margin: 1em -3em;
     margin-right: -4.9vw;
     margin-left: -4.9vw;
@@ -106,10 +97,6 @@ a:focus {
     color: #02a;
     text-decoration: underline;
 }
-a[target=_blank] {
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
 img {
     width: auto;
     /* max-width: 100%; */
@@ -123,8 +110,42 @@ img {
     image-rendering:      crisp-edges;
     image-rendering: pixelated; /* Eaquals non standard "optimizeSpeed" */
 }
-abbr {
-    border-bottom: 1px dotted #aaa;
+blockquote {
+    margin: 1.3em -3.2em 1.2em;
+    /* margin-right: -4.9vw; */
+    /* margin-left: -4.9vw; */
+    padding: 0 3em;
+    /* padding-right: 4.9vw; */
+    /* padding-left: 4.9vw; */
+    color: #777;
+    /* background-color: #f2f2f2; */ /* Firefox doesn't overflow background inside "columns" */
+    border: 0 solid transparent;
+    border-width: 0 .2em;
+    border-right-color: #ddd;
+}
+blockquote:before,
+blockquote:after {
+    content: "";
+    display: table;
+}
+table {
+    overflow: auto;
+    display: block;
+    width: 100%;
+    word-break: normal;
+    word-break: keep-all;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+th, td {
+    padding: .4em;
+}
+th {
+    font-weight: bold;
+    text-align: right;
+}
+td {
+    vertical-align: top;
 }
 ::selection {
     color: initial;
@@ -134,19 +155,12 @@ abbr {
 html,
 .\~full {
     width: 100%;
-    /* width: 100vw; */
 }
 /* CSS escapes https://mothereff.in/css-escapes */
 .\~size {
-    min-width: 13.6em;
-    /* max-width: 47.45em; */
-    max-width: 47.407em;
+    min-width: 15.22em;
+    max-width: 53em;
     margin: auto;
-    box-sizing: border-box;
-
-
-    /* border: 1px solid rgba(0,0,0,.3); */
-    /* background-color: rgba(0,0,0,.02); */
 }
 .\~space {
     padding-right: 4.6em;
@@ -162,15 +176,16 @@ html,
     display: block;
     clear: both;
 }
-.noscroll {
-    /* overflow: hidden; */
+.wrapper {
+    /* baseline https://pilot.co/blog/implementing-baseline-rhythm-in-css/ */
+    /* background-image: linear-gradient(rgba(255, 0, 0, 0.15), rgba(255, 0, 0, 0.15) 1px, transparent 1px); */
+    /* background-size: 1px 1.5em; */
 }
 .container {
     overflow: hidden;
     padding-top: 5em;
     padding-bottom: 7.1em;
     min-height: 100vh;
-    background-color: #fff;
 }
 .header {
     position: fixed;
@@ -214,8 +229,6 @@ html,
     padding: .4em;
     padding-right: .6vw;
     padding-left: .6vw;
-    /* min-height: 100%; */
-    /* color: inherit; */
     color: #fff;
     text-decoration: none;
     box-sizing: border-box;
@@ -275,14 +288,45 @@ a.logo {
     margin-top: -2.5em;
     pointer-events: none;
 }
+.box {
+    line-height: 1;
+}
+.box a {
+    display: block;
+    width: 10em;
+    margin: .5em;
+    float: right;
+    text-decoration: none;
+}
+.image {
+    height: 10em;
+    width: 10em;
+    object-fit: cover; /* Size object http://dev.w3.org/csswg/css-images-3/#the-object-fit, https://css-tricks.com/on-object-fit-and-object-position/ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid currentColor;
+}
+.title {
+    overflow: hidden;
+    padding: .5em 0 .2em;
+    font-size: 108%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.field {
+    color: #aaa;
+    font-size: 80%;
+    vertical-align: top;
+}
 .list {
-    float: left
+    float: left;
+    white-space: nowrap;
 }
 .footer {
     height: 3.7em;
     margin-top: -3.7em;
     padding-top: 1em;
-    list-style: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
@@ -296,17 +340,14 @@ a.logo {
     }
 }
 @media (max-width: 720px) {
-    html {
-        background-color: #fff;
-    }
-    html.noscroll {
-        overflow: hidden;
-    }
     blockquote {
-        margin-left: -1.9em;
         margin-right: -1.9em;
-        padding-left: calc(1.9em - .35em);
+        margin-left: -1.9em;
         padding-right: 1.9em;
+        padding-left: 1.9em;
+    }
+    .list {
+        display: none;
     }
 }
 @media (max-width: 480px) {
@@ -319,16 +360,7 @@ a.logo {
     h2 {
         font-size: 1.15em;
     }
-    h3 {
-        font-size: 1.3em;
-    }
 }
-
-
-
-
-
-
 
 /* Scale hack http://codepen.io/MadeByMike/pen/0dbc9b82769c3e2a0cbfc3192bcaabd3
    fluid typography https://www.smashingmagazine.com/2016/05/fluid-typography/
@@ -347,10 +379,7 @@ p {
     margin-bottom: 1.5rem;
 }
 h1,
-h2,
-h3,
-h4,
-h5 {
+h2 {
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
@@ -361,40 +390,4 @@ h1 {
 h2 {
     font-size: 1.5rem;
     margin-top: calc((1.5rem - 1.5rem) + 1.5rem*2);
-}
-h3 {
-    font-size: 1.25rem;
-    margin-top: calc((1.5rem - 1.25rem) + 1.5rem*2);
-}
-h4 {
-    font-size: 1rem;
-    margin-top: calc((1.5rem - 1rem) + 1.5rem*2);
-}
-h5 {
-    font-size: .875rem;
-    margin-top: calc((1.5rem - 0.875rem) + 1.5rem*2);
 } */
-
-/* Alef Hebrew (Hebrew) http://www.google.com/fonts/earlyaccess */
-@font-face {
-  font-family: AlefHebrew;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(alef-regular.eot);
-  src: url(alef-regular.eot?#iefix) format("embedded-opentype"),
-       url(alef-regular.woff2) format("woff2"),
-       url(alef-regular.woff) format("woff"),
-       url(alef-regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: AlefHebrew;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(alef-bold.eot);
-  src: url(alef-bold.eot?#iefix) format("embedded-opentype"),
-       url(alef-bold.woff2) format("woff2"),
-       url(alef-bold.woff) format("woff"),
-       url(alef-bold.ttf) format("truetype");
-}
