@@ -3,17 +3,18 @@ layout: artist
 category: artist
 title: אורה שוורץ
 field: איור
-
-i1: 3D Model
-i2: Comics
-i3: Cooking
-i4: Evolution
-i5: Goat
-i6: Life
-i7: Ora
-i8: Picture1
-i9: Shana Tova 2014
+gallery:
+    - 3D Model
+    - Comics
+    - Cooking
+    - Evolution
+    - Goat
+    - Life
+    - Ora
+    - Picture1
+    - Shana Tova 2014
 ---
+
 
 E-mail: <ora.schwarz@gmail.com>
 
