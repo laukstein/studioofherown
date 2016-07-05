@@ -2,8 +2,9 @@
 layout: default
 ---
 
-{% include artist-list.html %}
 {% include artist-gallery.html %}
+{% include artist-list.html %}
 
 <h1 itemprop=headline>{{ page.title }}</h1>
+{% include artist-profile.html %}
 <p>{{ content }}</p>

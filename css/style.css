@@ -1,3 +1,9 @@
+/*
+
+Resources
+CSS escapes https://mothereff.in/css-escapes
+
+*/
 @viewport {
     width: device-width;
 }
@@ -65,14 +71,6 @@ p + p {
 br {
     word-spacing: 0;
 }
-hr {
-    margin: 1em -3em;
-    margin-right: -4.9vw;
-    margin-left: -4.9vw;
-    clear: both;
-    border: 0;
-    border-top: 1px solid #ddd;
-}
 a img,
 abbr,
 iframe {
@@ -99,8 +97,8 @@ a:focus {
 }
 img {
     width: auto;
-    /* max-width: 100%; */
-    max-width: 2em;
+    max-width: 100%;
+    /* max-width: 2em; */
     height: auto;
     vertical-align: top;
     object-fit: contain;
@@ -129,9 +127,6 @@ blockquote:after {
     display: table;
 }
 table {
-    overflow: auto;
-    display: block;
-    width: 100%;
     word-break: normal;
     word-break: keep-all;
     border-spacing: 0;
@@ -156,7 +151,6 @@ html,
 .\~full {
     width: 100%;
 }
-/* CSS escapes https://mothereff.in/css-escapes */
 .\~size {
     min-width: 15.22em;
     max-width: 53em;
@@ -170,11 +164,27 @@ html,
     margin-right: auto;
     margin-left: auto;
 }
+.\~wide {
+    width: 100vw;
+    padding-right: 2em;
+    padding-left: 2em;
+    margin-right: calc((52em - 100vw) / 2);
+    margin-bottom: 2em;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
 .\~clearfix:after {
     /* Clearfix http://cssmojo.com/the-very-latest-clearfix-reloaded/ */
     content: "";
     display: block;
     clear: both;
+}
+@media (max-width: 52.01em) {
+    hr,
+    .\~wide {
+        margin-right: -4.6em;
+        margin-right: -4.9vw;
+    }
 }
 .wrapper {
     /* baseline https://pilot.co/blog/implementing-baseline-rhythm-in-css/ */
@@ -182,7 +192,7 @@ html,
     /* background-size: 1px 1.5em; */
 }
 .container {
-    overflow: hidden;
+    /* overflow: hidden; */
     padding-top: 5em;
     padding-bottom: 7.1em;
     min-height: 100vh;
@@ -251,11 +261,6 @@ a.logo {
     fill: currentColor;
     vertical-align: top;
 }
-.nav span {
-    overflow: hidden;
-    display: block;
-    text-overflow: ellipsis;
-}
 .shadow {
     overflow: hidden;
     position: absolute;
@@ -293,28 +298,74 @@ a.logo {
 }
 .box a {
     display: block;
-    width: 10em;
+    width: 9.6em;
     margin: .5em;
     float: right;
     text-decoration: none;
 }
 .image {
-    height: 10em;
-    width: 10em;
-    object-fit: cover; /* Size object http://dev.w3.org/csswg/css-images-3/#the-object-fit, https://css-tricks.com/on-object-fit-and-object-position/ */
+    height: 9.6em;
+    width: 9.6em;
+    /* object-fit: cover; */ /* Size object http://dev.w3.org/csswg/css-images-3/#the-object-fit, https://css-tricks.com/on-object-fit-and-object-position/ */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid currentColor;
 }
-.gallery {
-    text-align: center;
+.profile {
+    position: relative;
+    right: -.8em;
+    padding: 3em;
+    margin: 1em;
+    float: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    shape-outside: circle();
 }
-.gallery .image {
-    display: block;
-    width: 100%;
-    height: 20em;
-    background-size: contain;
+.masonry {
+    max-width: 102em;
+    margin: -2.3em auto 0;
+    padding-top: 2.8em;
+    padding-bottom: 1.3em;
+    text-align: center;
+    column-width: 14em;
+    column-gap: .75em;
+}
+.masonry figure {
+    overflow: hidden;
+    position: relative;
+    display: inline-block; /* Prevent column break an element */
+    margin: 0 0 .75em;
+    vertical-align: top;
+    background-color: #fff;
+    will-change: transform;
+}
+.masonry a {
+    display: inline-block;
+    text-decoration: none;
+}
+.masonry a:hover figcaption {
+    transform: translateY(100%);
+}
+.masonry figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -.013em;
+    max-height: 41px;
+    padding: 0 .3em;
+    color: #333;
+    line-height: 2.2;
+    text-shadow: 1px 0 0 rgba(255,255,255,.5);
+    white-space: nowrap;
+    word-wrap: normal;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.8);
+    /* box-shadow: inset 0 -1px 1px 0 rgba(0,0,0,.2); */
+    transition: transform .35s cubic-bezier(.2,1,.4,1);
+    will-change: transform;
 }
 .title {
     overflow: hidden;
@@ -329,8 +380,17 @@ a.logo {
     vertical-align: top;
 }
 .list {
+    margin-top: 1em;
+    margin-right: 1.5em;
     float: left;
+}
+.list a {
+    display: table;
     white-space: nowrap;
+}
+.list .active {
+    color: #02a;
+    font-weight: bold;
 }
 .footer {
     height: 3.7em;
@@ -341,11 +401,16 @@ a.logo {
     word-wrap: normal;
     border-top: 1px solid #e1e1e1;
 }
+.\~clip {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
 @media (-webkit-min-device-pixel-ratio: 0) {
-    .nav span {
+    .\~clip {
         text-overflow: clip;
-        -webkit-mask: linear-gradient(to right, rgba(51,51,51,0), #333 3vw, #333);
-                mask: linear-gradient(to right, rgba(51,51,51,0), #333 3vw, #333);
+        -webkit-mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333);
+                mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333);
     }
 }
 @media (max-width: 720px) {

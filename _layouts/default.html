@@ -16,7 +16,7 @@
         <li><a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 242"><path d="M216 162h-27V27H27v189h108v26H0V0h216v162zM54 189V54h108v135h-54v-27h27V81H81v108H54z"/></svg>{{ site.title }}</span></a>{% assign pages=site.posts | sort: 'order' %}{%
         for nav in pages | nav.order && nav.title %}{%
             if nav.order && nav.title %}
-        <li><a{% if nav.url == page.url %} class=active{% endif %} href="{{ nav.url | prepend: site.baseurl }}"><span>{{ nav.title }}</span></a>{%
+        <li><a{% if nav.url == page.url %} class=active{% endif %} href="{{ nav.url | prepend: site.baseurl }}"><span class=~clip>{{ nav.title }}</span></a>{%
             endif %}{%
         endfor %}
     </ul>
