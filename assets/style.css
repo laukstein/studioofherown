@@ -151,6 +151,21 @@ html,
 .\~full {
     width: 100%;
 }
+header ~ .\~full-size {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-top: 5em;
+    box-sizing: border-box;
+}
+.\~full-size iframe {
+    width: 100vw;
+    height: calc(100vh - 5.22em);
+}
 .\~size {
     min-width: 15.22em;
     max-width: 53em;

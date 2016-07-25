@@ -1,17 +1,18 @@
-# GitHub pages https://pages.github.com/versions/
-
-# include: ['_pages']
-# encoding: utf-8
-timezone: UTC
-markdown: kramdown
-permalink: /:categories/:title
-sass:
-    style: compressed
-
-# port: 80
+title: סטודיו משלך
+description: סטודיו משלך הוא מיזם חברתי-מגדרי הפועל בירושלים והוקם על מנת לתמוך באמניות צעירות בתחילת דרכן
 url: https://studioofherown.com
 enforce_ssl: studioofherown.com
 email: team@studioofherown.com
+permalink: /:categories/:title
 
-title: סטודיו משלך
-description: סטודיו משלך הוא מיזם חברתי-מגדרי הפועל בירושלים והוקם על מנת לתמוך באמניות צעירות בתחילת דרכן
+# include: ['_pages']
+timezone: UTC
+markdown: kramdown
+sass:
+    style: compressed
+compress_html:
+    clippings: all
+    comments: ["<!-- ", " -->"]
+    endings: all
+    profile: false
+    startings: [html, head, body]
