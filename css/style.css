@@ -165,10 +165,14 @@ html,
     margin-left: auto;
 }
 .\~wide {
+    position: relative;
+    left: 50%;
+    right: 50%;
     width: 100vw;
     padding-right: 2em;
     padding-left: 2em;
-    margin-right: calc((52em - 100vw) / 2);
+    margin-left: -50vw;
+    margin-right: -50vw;
     margin-bottom: 2em;
     background-color: #f2f2f2;
     box-sizing: border-box;
@@ -180,8 +184,7 @@ html,
     clear: both;
 }
 @media (max-width: 52.01em) {
-    hr,
-    .\~wide {
+    hr {
         margin-right: -4.6em;
         margin-right: -4.9vw;
     }
@@ -325,10 +328,9 @@ a.logo {
     shape-outside: circle();
 }
 .masonry {
-    max-width: 102em;
-    margin: -2.3em auto 0;
     padding-top: 2.8em;
     padding-bottom: 1.3em;
+    margin-top: -2.3em;
     text-align: center;
     column-width: 14em;
     column-gap: .75em;

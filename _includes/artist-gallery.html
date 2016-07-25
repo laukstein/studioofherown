@@ -1,5 +1,5 @@
 {% capture assets %}/assets{{ page.url }}{% endcapture %}{% assign imageNr = 0 %}<div class=~wide>
-    <div class=masonry>{% for image in site.static_files %}{%
+    <div class="masonry ~size">{% for image in site.static_files %}{%
         if image.path contains assets %}{% unless image.path contains "profile" %}
         <figure>
             <a href={{ image.path }}>

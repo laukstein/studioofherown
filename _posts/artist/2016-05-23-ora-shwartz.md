@@ -10,8 +10,6 @@ gallery:
     - Evolution
     - Goat
     - Life
-    - Ora
-    - Picture1
     - Shana Tova 2014
 ---
 
