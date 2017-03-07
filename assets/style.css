@@ -260,6 +260,7 @@ header ~ .\~full-size {
 .nav a {
     display: block;
     width: 100%;
+    padding: 1em;
     padding-right: .6vw;
     padding-left: .6vw;
     color: #fff;
