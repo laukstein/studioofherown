@@ -205,29 +205,35 @@ header ~ .\~full-size {
     }
 }
 .wrapper {
+    height: 100%;
     /* baseline https://pilot.co/blog/implementing-baseline-rhythm-in-css/ */
     /* background-image: linear-gradient(rgba(255, 0, 0, 0.15), rgba(255, 0, 0, 0.15) 1px, transparent 1px); */
     /* background-size: 1px 1.5em; */
 }
 .container {
     /* overflow: hidden; */
+    display: table;
+    height: 100%;
+    min-height: 100vh;
     padding-top: 5em;
     padding-bottom: 7.1em;
-    min-height: 100vh;
+    box-sizing: border-box;
 }
 .header {
     position: fixed;
     z-index: 9;
     top: 0;
     left: 0;
-    background-color: #000;
+    background-color: #47194d;
+    background-image: linear-gradient(to right, rgba(121, 43, 121, 0), #792b79);
 }
 .nav {
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     max-width: 100%;
-    padding: 2.3em 0 0;
+    padding: 0 1em;
     margin: 0;
     font-size: 108%;
     text-align: center;
@@ -254,7 +260,6 @@ header ~ .\~full-size {
 .nav a {
     display: block;
     width: 100%;
-    padding: .4em;
     padding-right: .6vw;
     padding-left: .6vw;
     color: #fff;
@@ -262,24 +267,22 @@ header ~ .\~full-size {
     box-sizing: border-box;
 }
 .nav a:hover,
-.nav a:focus {
-    /* background-color: #f6f6f6; */
-}
-.nav a:active,
+.nav a:focus,
 .nav a.active {
-    /* background-color: #eee; */
+    background: rgba(71, 25, 77,.5);
 }
 a.logo {
     fill: currentColor;
     text-decoration: none;
 }
 .logo svg {
-    margin-left: .3em;
+    opacity: .7;
     width: 1.1em;
+    margin-left: .3em;
     fill: currentColor;
-    vertical-align: top;
+    vertical-align: middle;
 }
-.shadow {
+/* .shadow {
     overflow: hidden;
     position: absolute;
     bottom: -3.5em;
@@ -298,13 +301,13 @@ a.logo {
     pointer-events: none;
     border-top: .25em solid #fff;
     box-shadow: 0 0 2.3em 2em #fff;
-}
+} */
 .main {
     padding-top: 2.3em;
     padding-bottom: 2.5em;
     padding-bottom: 4vw;
 }
-.main :target:before {
+.main [id]:target:before {
     content: "";
     display: block;
     height: 2.5em;
@@ -410,9 +413,8 @@ a.logo {
     font-weight: bold;
 }
 .footer {
-    height: 3.7em;
-    margin-top: -3.7em;
-    padding-top: 1em;
+    margin-top: -3.6em;
+    padding-top: .8em;
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
