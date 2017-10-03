@@ -5,12 +5,12 @@
 
 ## Pages
 
-Located under [_posts](_posts) and prioritized by `order: Number`.
+Located under [_pages](_pages) and prioritized by `order: Number`.
 
 
 ## Artist schema
 
-* [_posts/artist](_posts/artist)/2016-05-23-*name-surename*.md
+* [_pages/artist](_pages/artist)/*name-surename*.md
 * [assets/artist](assets/artist)/*name-surename*/profile.jpg | *.jpg
 
 
