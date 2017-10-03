@@ -1,0 +1,13 @@
+exhibition:
+    - name: curator
+      title: אוצר
+    - name: address
+      title: כתובת
+    - name: participators
+      title: משתתפות
+      short: true
+    - name: catalog
+      title: קטלוג
+publication:
+    - name: link
+      title: קישור למאמר

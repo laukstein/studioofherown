@@ -1,0 +1,16 @@
+---
+layout: default
+header: true
+order: 3
+category: exhibition
+title: תערוכות
+---
+
+<div class=grid>
+{% assign pages = site.pages | sort: "date" | reverse %}{%
+for item in pages %}{%
+    if item.layout == page.category %}{%
+        include exhibition.html data = item %}{%
+    endif %}{%
+endfor %}
+</div>

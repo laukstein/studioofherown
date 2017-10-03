@@ -1,0 +1,46 @@
+---
+layout: default
+description: סטודיו משלך הוא מיזם חברתי-מגדרי הפועל בירושלים והוקם על מנת לתמוך באמניות צעירות בתחילת דרכן
+---
+
+<h1>חדש בגלריית סטודיו משלך</h1>
+
+{%
+assign pages = site.pages | sort: "date" | reverse %}{%
+assign index = 0 %}{%
+assign max = 4 %}
+<div class=grid>{%
+for item in pages %}{%
+    if item.layout == "exhibition" %}{%
+        if index < max %}{%
+            if index > 0 %}{% assign short = true %}{% else %}{% assign short = nil %}{% endif %}{%
+            if index > 2 %}{% assign hideImage = true %}{% else %}{% assign hideImage = nil %}{% endif %}{%
+            if hideImage == nil and index == 1 %}{% assign imageClassName = "small" %}{% else %}{% assign imageClassName = nil %}{% endif %}{%
+            if index < 2 %}{% assign className = "span" %}{% else %}{% assign className = nil %}{% endif %}{%
+
+            include exhibition.html
+                data = item
+                className = className
+                hideImage = hideImage
+                imageClassName = imageClassName
+                short = short
+
+            %}{% assign index = index | plus: 1 %}{%
+        endif %}{%
+    endif %}{%
+endfor %}
+</div>{%
+
+assign pages = site.pages | sort: "date" | reverse %}{%
+assign index = 0 %}
+<h2>כתבות</h2>
+<div class=grid>{%
+for item in pages %}{%
+    if item.layout == "publication" %}{%
+        if index < max %}{%
+            include publication.html data = item short = true %}{%
+            assign index = index | plus: 1 %}{%
+        endif %}{%
+    endif %}{%
+endfor %}
+</div>

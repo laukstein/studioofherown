@@ -1,0 +1,16 @@
+---
+layout: page
+header: true
+order: 4
+category: publication
+title: כתבות
+---
+
+<div class=grid>
+{% assign pages = site.pages | sort: "date" | reverse %}{%
+for item in pages %}{%
+    if item.layout == page.category %}{%
+        include publication.html data = item %}{%
+    endif %}{%
+endfor %}
+</div>

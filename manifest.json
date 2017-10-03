@@ -1,0 +1,18 @@
+---
+layout: null
+---
+
+{
+    "lang": "he",
+    "name": "{{ site.title }}",
+    "description": "סטודיו משלך הוא מיזם חברתי-מגדרי הפועל בירושלים והוקם על מנת לתמוך באמניות צעירות בתחילת דרכן",
+    "icons": [{
+        "src": "assets/logo.png",
+        "sizes": "192x192"
+    }],
+    "scope": "/",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#fff",
+    "background_color": "#fff7f7"
+}

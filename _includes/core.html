@@ -1,0 +1,10 @@
+{%
+
+assign file = page.slug %}{%
+capture category %}{%
+    assign diff = page.url | remove_first: "/" | remove: file %}{%
+    if diff.size %}{{ page.url | remove: file | remove: "/" }}{% endif %}{%
+    assign diff = "" %}{% endcapture %}{%
+capture inRoot %}{% if page.collection == nil %}true{% endif %}{% endcapture
+
+%}

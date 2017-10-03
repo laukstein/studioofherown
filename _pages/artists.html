@@ -1,0 +1,19 @@
+---
+layout: default
+header: true
+order: 2
+category: artist
+title: אמניות
+---
+
+<div class="box grid user">{% assign pages=site.pages | sort: "title" %}{%
+    for item in pages %}{%
+        if item.layout == page.category %}
+    <a href="{{ item.url }}" title="{{ item.title }}">
+        <img class=media src=/assets{{ item.url }}/profile.jpg alt="{{ item.title }}">
+        <div class=title>{{ item.title }}</div>
+        <span class=field>{{ item.field }}</span>
+    </a>{%
+        endif %}{%
+    endfor %}
+</div>

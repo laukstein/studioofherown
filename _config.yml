@@ -1,14 +1,21 @@
 title: סטודיו משלך
-description: סטודיו משלך הוא מיזם חברתי-מגדרי הפועל בירושלים והוקם על מנת לתמוך באמניות צעירות בתחילת דרכן
 url: https://studioofherown.com
 enforce_ssl: studioofherown.com
-email: team@studioofherown.com
-permalink: /:categories/:title
-
-# include: ['_pages']
+permalink: /:category/:title
+include: [_pages]
+collections:
+    pages:
+        output: true
+        permalink: /:path
+safe: true
 timezone: UTC
+assets: /assets/
 markdown: kramdown
+kramdown:
+    input: GFM
+    hard_wrap: true
 sass:
+    sass_dir: assets
     style: compressed
 compress_html:
     clippings: all
@@ -16,3 +23,4 @@ compress_html:
     endings: all
     profile: false
     startings: [html, head, body]
+exclude: [CNAME, Gemfile, Gemfile.lock, LICENSE, node_modules, README.md, ~*]
