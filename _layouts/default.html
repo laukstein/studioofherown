@@ -11,7 +11,7 @@ style:
         <nav class=nav-container dir=rtl>
             <a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><img src={{ site.assets }}logo.png width=126 height=126 alt="{{ site.title }}"></a>{% assign pages = site.pages | sort: "order" %}{%
         for nav in pages %}{%
-            if nav.header and nav.title and nav.private == nil
+            if nav.header and nav.title
                 %}<a{% if nav.url == page.url or nav.category == page.layout %} class=active{% endif %} href="{{ nav.url | relative_url }}">{{ nav.title }}</a>{%
             endif %}{%
         endfor %}
