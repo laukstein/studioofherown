@@ -2,14 +2,14 @@ title: סטודיו משלך
 url: https://studioofherown.com
 enforce_ssl: studioofherown.com
 permalink: /:category/:title
+assets: /assets/
+timezone: UTC
+safe: true
 include: [_pages]
 collections:
     pages:
         output: true
         permalink: /:path
-safe: true
-timezone: UTC
-assets: /assets/
 markdown: kramdown
 kramdown:
     input: GFM
@@ -23,4 +23,11 @@ compress_html:
     endings: all
     profile: false
     startings: [html, head, body]
-exclude: [CNAME, Gemfile, Gemfile.lock, LICENSE, node_modules, README.md, ~*]
+exclude:
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - node_modules
+    - /*README.md
+    - ~*
