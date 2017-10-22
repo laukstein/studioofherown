@@ -55,7 +55,7 @@
                     if include.short and include.className == nil
                         %}{{ participators | join: ", " | truncatewords: 9, "" }}{% else
                         %}{{ participators | join: ", " }}{% endif %}{{ link }}{%
-                when "catalog" %}<a class=nowrap href="{{ item[locale.name] }}" target=_blank>{{ item[locale.name] }}</a>{%
+                when "catalog" %}<a class=nowrap href="{{ item[locale.name] }}" target=_blank>{{ item[locale.name] | remove: "https://" | remove: "http://" }}</a>{%
                 else %}{{ item[locale.name] }}{%
             endcase %}</div>
         </li>{%

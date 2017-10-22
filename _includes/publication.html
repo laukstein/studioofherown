@@ -28,7 +28,7 @@ else %}
     if item.link %}    <ul class=sheet>
         <li class=row>
             <div class="column label">{{ l10n[0].title }}</div>
-            <div class=column><a class=nowrap href="{{ item.link }}" target=_blank>{{ item.link }}</a></div>
+            <div class=column><a class=nowrap href="{{ item.link }}" target=_blank>{{ item.link  | remove: "https://" | remove: "http://" }}</a></div>
         </li>
     </ul>{%
     endif %}{%
