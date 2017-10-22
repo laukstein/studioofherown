@@ -14,7 +14,6 @@ html {
     color: #333;
     font: 62.45% / 1.5 sans-serif;
     text-rendering: optimizeSpeed;
-    /* background-color: #fff; */
     background-color: #fff7f7;
     touch-action: manipulation;
     cursor: default;
@@ -53,7 +52,6 @@ h3 a {
 }
 h1,
 h2 {
-    /* color: #be6083; */
     font-weight: normal;
     line-height: 1.07;
 }
@@ -80,14 +78,10 @@ img {
 }
 a {
     color: #00d;
-    /* color: #22598f; */
     text-decoration: none;
     word-break: break-word;
     -webkit-box-decoration-break: clone; /* Chrome legacy, demo http://jsbin.com/xojoro/quiet */
             box-decoration-break: clone;
-    /* outline: transparent solid 2px;
-    -webkit-transition: outline .15s;
-            transition: outline .15s; */
 }
 a:hover,
 a:focus {
@@ -97,7 +91,6 @@ a:focus {
 img {
     width: auto;
     max-width: 100%;
-    /* max-width: 2em; */
     height: auto;
     vertical-align: top;
     object-fit: contain;
@@ -106,35 +99,6 @@ img {
     image-rendering: -moz-crisp-edges; /* Firefox legacy */
     image-rendering:      crisp-edges;
     image-rendering: pixelated; /* Eaquals non standard "optimizeSpeed" */
-}
-blockquote {
-    margin: 1.3em -3.2em 1.2em;
-    padding: 0 3em;
-    color: #777;
-    border: 0 solid transparent;
-    border-width: 0 .2em;
-    border-right-color: #ddd;
-}
-blockquote:before,
-blockquote:after {
-    content: "";
-    display: table;
-}
-table {
-    word-break: normal;
-    word-break: keep-all;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-th, td {
-    padding: .4em;
-}
-th {
-    font-weight: bold;
-    text-align: right;
-}
-td {
-    vertical-align: top;
 }
 
 header .wrapper,
@@ -172,21 +136,17 @@ nav a {
     flex-grow: 0;
     padding: 1em 1.4em;
     margin-top: auto;
-    /* color: inherit; */
     color: #22598f;
-    /* vertical-align: top; */
     vertical-align: bottom;
 }
 nav a:hover,
 nav a:focus,
 .bar:hover,
 .bar:focus {
-    /* color: inherit; */
     text-decoration: none;
     background-color: #f9f9f9;
 }
 nav .active.active {
-    /* color: #f58e84; */
     color: #be6083;
 }
 nav .active:after {
@@ -198,7 +158,6 @@ nav .active:after {
     bottom: -1px;
     height: .2em;
     background-color: currentcolor;
-    /* background-color: #f58e84; */
 }
 nav .active.logo img {
     filter: hue-rotate(100deg);
@@ -238,15 +197,11 @@ footer a + a {
     margin-right: 1.6em;
 }
 main {
-    /* display: block; */
     display: table;
     table-layout: fixed;
-    /* min-height: 100%; */
     min-height: 100vh;
-    /* padding-top: 3.7em; */
     padding-top: 9.5em;
     padding-bottom: 6.5em;
-    /* padding: 9.5em 3em 4.6em; */
     -webkit-user-select: text; /* Safari legacy */
        -moz-user-select: text;
         -ms-user-select: text;
@@ -256,9 +211,6 @@ main img,
 main .media {
     background-color: #eee;
 }
-/* main [id]:target {
-    animation: highlight 1s forwards;
-} */
 main [id]:target:before {
     content: "";
     display: block;
@@ -266,14 +218,6 @@ main [id]:target:before {
     margin-top: -10em;
     pointer-events: none;
 }
-/* @keyframes highlight {
-    from {
-        background-color: #ff0;
-    }
-    to {
-        background-color: rgba(255,255,0,0);
-    }
-} */
 
 .nowrap {
     overflow: hidden;
@@ -388,6 +332,7 @@ main [id]:target:before {
     margin: .7em 0;
     word-break: normal;
     word-break: keep-all;
+    line-height: 1.1;
     vertical-align: top;
     /* table-layout: fixed; */
     border-spacing: 0;
@@ -401,16 +346,34 @@ main [id]:target:before {
 .sheet li {
     margin: .3em 0;
 }
+.sheet h3 {
+    margin: 0;
+}
 .row {
     display: table-row-group;
     border-top: 1px solid #eee;
 }
-.row:first-child {
+.row:first-child,
+.row.title + .row {
     border-top: 0;
+}
+.row.title {
+    display: table-caption;
 }
 .column {
     display: table-cell;
     padding: .4em;
+}
+.column.auto {
+    width: inherit;
+}
+.column.sheet {
+    display: table;
+    table-layout: fixed;
+    margin: .4em;
+}
+.column.sheet + .column.sheet {
+    margin-top: -.4em;
 }
 .label {
     font-weight: bold;
@@ -418,7 +381,6 @@ main [id]:target:before {
 }
 .column.label {
     width: 1px;
-    /* width: 4.2em; */
 }
 .flow {
     float: left;
@@ -437,34 +399,43 @@ time {
 .box a {
     text-decoration: none;
 }
-.profile {
-    position: relative;
-    right: -.8em;
-    padding: 3em;
-    margin: 1em;
-    float: right;
+
+
+.profile.sheet {
+    width: auto;
+}
+.profile .figure {
+    padding-right: 0;
+    padding-left: .6em;
+    vertical-align: middle;
+}
+.profile .image {
+    padding: 3.85em;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 50%;
-    shape-outside: circle();
+    border-radius: .2em;
 }
+.profile .title {
+    padding: 0;
+}
+.profile  h1 {
+    display: table-header-group;
+    font-size: 232%;
+}
+
+
 .masonry {
-    padding-top: 2.8em;
-    padding-bottom: 1.3em;
-    margin-top: -2.3em;
-    text-align: center;
-    column-width: 14em;
-    column-gap: .75em;
+    -webkit-column-width: 13em; /* Android 4.4.4 */
+            column-width: 13em;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
 }
 .masonry figure {
     overflow: hidden;
     position: relative;
-    display: inline-block; /* Prevent column break an element */
     margin: 0 0 .75em;
-    vertical-align: top;
     background-color: #fff;
-    will-change: transform;
 }
 .masonry a {
     display: inline-block;
@@ -516,25 +487,19 @@ time {
     color: #02a;
     font-weight: bold;
 }
-.\~clip {
+.clip {
     overflow: hidden;
     display: block;
     text-overflow: ellipsis;
 }
-@media (-webkit-min-device-pixel-ratio: 0) {
-    .\~clip {
+@supports ((mask-image: none) or (-webkit-mask-image: none)) and (text-overflow: clip) {
+    .clip {
         text-overflow: clip;
-        -webkit-mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333);
+        -webkit-mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333); /* Chrome legacy */
                 mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333);
     }
 }
 @media (max-width: 720px) {
-    blockquote {
-        margin-right: -1.9em;
-        margin-left: -1.9em;
-        padding-right: 1.9em;
-        padding-left: 1.9em;
-    }
     .list {
         display: none;
     }

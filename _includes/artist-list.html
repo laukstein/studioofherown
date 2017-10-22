@@ -1,7 +1,0 @@
-<div class=list>{% assign pages=site.pages | sort: "title" %}{%
-    for artist in pages %}{%
-        if artist.layout == "artist" %}
-    <a{% if page.url == artist.url %} class=active{% endif %} href={{ artist.url | prepend: site.baseurl }}>{{ artist.title }}</a>{%
-    endif %}{%
-endfor %}
-</div>

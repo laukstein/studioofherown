@@ -1,6 +1,0 @@
-{% capture profile %}/assets{{ page.url }}/profile.jpg{% endcapture %}{%
-    for image in site.static_files %}{%
-        if image.path contains profile %}
-<div class=profile style="background-image:url({{ profile }})"></div>{%
-    endif %}{%
-endfor %}
