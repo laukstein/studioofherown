@@ -1,3 +1,10 @@
+artist:
+    email: מייל
+    phone: טלפון
+    address: כתובת
+    youtube: יוטיוב
+    vimeo: וימאו
+    flickr: פליקר
 exhibition:
     - name: curator
       title: אוצר
