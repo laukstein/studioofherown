@@ -62,6 +62,9 @@
             endif %}{%
         endif %}{%
     endfor %}
-    </ul>
+    </ul>{%
+    if item.text and include.full %}
+    <p>{{ item.text }}</p>{%
+    endif %}
     {% include date.html value = item.url %}</article>{%
 endif %}
