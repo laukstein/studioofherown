@@ -290,6 +290,7 @@ main [id]:target:before {
     max-width: inherit;
     margin: -.6em -3em 0;
     object-fit: cover;
+    object-position: top;
     /* object-position: bottom; */
 }
 .item .sheet {
