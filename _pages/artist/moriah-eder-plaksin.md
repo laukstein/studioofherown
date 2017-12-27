@@ -1,5 +1,5 @@
 ---
 layout: artist
-title: מוריה אדר-פלקסין
+title: מוריה אדר פלקסין
 field: רב תחומי
 ---
