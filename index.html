@@ -14,7 +14,7 @@ for item in pages %}{%
     if item.layout == "exhibition" %}{%
         if index < max %}{%
             if index > 0 %}{% assign short = true %}{% else %}{% assign short = nil %}{% endif %}{%
-            if index > 2 %}{% assign hideImage = true %}{% else %}{% assign hideImage = nil %}{% endif %}{%
+            if index > 3 %}{% assign hideImage = true %}{% else %}{% assign hideImage = nil %}{% endif %}{%
             if hideImage == nil and index == 1 %}{% assign imageClassName = "small" %}{% else %}{% assign imageClassName = nil %}{% endif %}{%
             if index < 2 %}{% assign className = "span" %}{% else %}{% assign className = nil %}{% endif %}{%
 
