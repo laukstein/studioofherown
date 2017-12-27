@@ -1,12 +1,27 @@
 ---
 layout: default
+array: []
 ---
 
 {% assign l10n = site.data.l10n.artist
-%}<ul class="sheet profile">{% capture profile %}/assets{{ page.url }}/profile.jpg{% endcapture %}{%
+%}<ul class="sheet profile">{%
+    assign profile = "/assets" | append: page.url | append: "/profile.jpg" %}{%
     for image in site.static_files %}{%
         if image.path contains profile %}
     <li class="column figure"><div class="column image" style="background-image:url({{ profile }})"></div></li>{%
+    endif %}{%
+endfor %}{% assign pages = site.pages | sort: "date" | reverse %}{%
+
+assign participations = layout.array %}{%
+assign A = page.title | replace: "-", " " %}{%
+for item in pages %}{%
+    if item.layout == "exhibition" and item.participators %}{%
+        for participator in item.participators %}{%
+            assign B = participator | replace: "-", " " %}{%
+            if A == B %}{%
+                assign participations = participations | push: item %}{%
+            endif %}{%
+        endfor %}{%
     endif %}{%
 endfor %}
     <li class="column auto">
@@ -28,6 +43,19 @@ if page.profile %}{%
             </li>{%
         endif %}{%
     endfor %}{%
+endif %}{%
+
+if participations.size > 0 %}
+            <li class=row>
+                <div class="column label">{{ l10n.participations }}</div>
+                <div class=column>{%
+    assign participationsHTML = layout.array %}{%
+    for item in participations %}{%
+        capture data %}<a href="{{ item.url }}">{{ item.title }}</a>{% endcapture %}{%
+        assign participationsHTML = participationsHTML | push: data %}{%
+    endfor %}{{ participationsHTML | join: ", " }}
+                </div>
+            </li>{%
 endif %}
         </ul>
     </li>
