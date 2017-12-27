@@ -10,7 +10,13 @@ title: אמניות
     for item in pages %}{%
         if item.layout == page.category %}
     <a href="{{ item.url }}" title="{{ item.title }}">
-        <img class=media src=/assets{{ item.url }}/profile.jpg alt="{{ item.title }}">
+        {%
+        assign profile = "/assets" | append: item.url | append: "/profile.jpg" %}{%
+        for image in site.static_files %}{%
+            if image.path contains profile %}
+        <img class=media src={{ profile }} alt="{{ item.title }}">{%
+            endif %}{%
+        endfor %}
         <div class=title>{{ item.title }}</div>
         <span class=field>{{ item.field }}</span>
     </a>{%
