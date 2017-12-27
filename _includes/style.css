@@ -223,7 +223,7 @@ main [id]:target:before {
     overflow: hidden;
     direction: ltr;
     display: inline-block;
-    display: -webkit-box;
+    display: -webkit-inline-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     max-width: 100%;
@@ -333,7 +333,7 @@ main [id]:target:before {
     margin: .7em 0;
     word-break: normal;
     word-break: keep-all;
-    line-height: 1.1;
+    line-height: 1.4;
     vertical-align: top;
     /* table-layout: fixed; */
     border-spacing: 0;
