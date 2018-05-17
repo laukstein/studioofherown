@@ -25,6 +25,7 @@
                 assign link = " ... <a href=" | append: item.url | append: ">המשך קריא</a>"
                 %}<span class=label>{{ locale.title }}</span> {% endif %}{%
             case locale.name %}{%
+                when "curator" %}{{ item[locale.name] | join: ", " }}{%
                 when "address" %}<a href="https://www.google.com/maps/search/{{ item[locale.name] | replace: " ", "+" }}" target=_blank>{{ item[locale.name] }}</a>{%
                 when "participators" %}{%
                     assign participators = "" | split: "" %}{%
@@ -64,7 +65,11 @@
     endfor %}
     </ul>{%
     if item.text and include.full %}
-    <p>{{ item.text }}</p>{%
+    {%
+        if item.text contains "
+" %}{{ item.text | markdownify }}{%
+        else %}<p>{{ item.text }}</p>{%
+        endif %}{%
     endif %}
     {% include date.html value = item.url %}</article>{%
 endif %}

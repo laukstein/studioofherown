@@ -25,10 +25,15 @@ for item in pages %}{%
                 imageClassName = imageClassName
                 short = short
 
-            %}{% assign index = index | plus: 1 %}{%
+            %}{%
         endif %}{%
+        assign index = index | plus: 1 %}{%
     endif %}{%
-endfor %}
+endfor %}{%
+assign more = index | minus: max %}{%
+if more %}
+    <div><a class=button href=/exhibition>קרא עוד {{ more }}</a></div>{%
+endif %}
 </div>{%
 
 assign pages = site.pages | sort: "date" | reverse %}{%

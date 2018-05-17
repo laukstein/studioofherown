@@ -313,6 +313,19 @@ main [id]:target:before {
     padding-right: 3em;
     padding-left: 3em;
 }
+a.button {
+    display: inline-block;
+    padding: .2em .8em;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #22598f;
+    border-radius: 4px;
+}
+a.button:hover,
+a.button:active {
+    background-color: #02a;
+}
 
 .card {
     display: table;
