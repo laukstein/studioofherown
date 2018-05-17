@@ -1,11 +1,7 @@
 artist:
     email: מייל
-    phone: טלפון
-    address: כתובת
-    youtube: יוטיוב
-    vimeo: וימאו
-    flickr: פליקר
-    participations: השתתפות בתערוכות
+    website: פורטפוליו
+    statement: הצהרה
 exhibition:
     - name: curator
       title: אוצר

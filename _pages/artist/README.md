@@ -1,23 +1,20 @@
 YAML schema
 
     layout: artist
-    title
-    field
+    title:
+    field:
     profile:
-        email
-        phone
-        address
-        youtube
-        vimeo
-        flickr
+        email:
+        website:
     gallery:
-        1
-        2
-        3
-    resume:
-        -
-            title
-            2017
-            2016:
-                -
-                -
+        1:
+        2:
+        3:
+        4:
+        5:
+        6:
+        7:
+        8:
+        9:
+    statement: |
+        

@@ -36,8 +36,7 @@ if page.profile %}{%
                 <div class=column>{%
             case key %}{%
                 when "email" %}<a href=mailto:{{ item[1] }} target=_blank>{{ item[1] }}</a>{%
-                when "phone" %}<a href=tel:{{ item[1] }} target=_blank>{{ item[1] }}</a>{%
-                when "youtube" or "vimeo" or "flickr" %}<a href="{{ item[1] }}" dir=auto target=_blank rel=noopener>{{ item[1] | remove: "https://" | remove: "http://" }}</a>{%
+                when "website" %}<a href="{{ item[1] }}" dir=auto target=_blank rel=noopener>{{ item[1] | remove: "https://" | remove: "http://" }}</a>{%
                 else %}{{ item[1] }}{%
             endcase %}</div>
             </li>{%
@@ -60,6 +59,11 @@ endif %}
         </ul>
     </li>
 </ul>
+{%
+if page.statement contains "
+" %}{{ page.statement | markdownify }}{%
+else %}<p>{{ page.statement }}</p>{%
+endif %}
 <div class=list>{%
 assign pages = site.pages | sort: "title" %}{%
 for artist in pages %}{%
