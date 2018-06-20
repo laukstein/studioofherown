@@ -1,6 +1,10 @@
 ---
-layout: default
+layout: item
 array: []
+css: |
+    .column.label.label {
+        padding-right: 0;
+    }
 ---
 
 {% assign l10n = site.data.l10n.artist
@@ -64,7 +68,7 @@ if page.statement contains "
 " %}{{ page.statement | markdownify }}{%
 else %}<p>{{ page.statement }}</p>{%
 endif %}
-<div class=list>{%
+<div class=list hidden>{%
 assign pages = site.pages | sort: "title" %}{%
 for artist in pages %}{%
     if artist.layout == "artist" %}
