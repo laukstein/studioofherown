@@ -2,6 +2,7 @@ artist:
     email: מייל
     website: פורטפוליו
     statement: הצהרה
+    participations: משתתפות
 exhibition:
     - name: curator
       title: אוצר
