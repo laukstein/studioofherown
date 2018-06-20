@@ -10,11 +10,10 @@ html {
     overflow-y: scroll;
         width: 100%;
     max-width: 100%;
-    /* min-width: 21em; */
     color: #333;
     font: 62.45% / 1.5 sans-serif;
     text-rendering: optimizeSpeed;
-    background-color: #fff7f7;
+    background-color: #f3f4f7;
     touch-action: manipulation;
     cursor: default;
     caret-color: currentcolor;
@@ -28,7 +27,6 @@ iframe {
     margin: 0;
 }
 body {
-    /* min-width: 47em; */
     font-size: 1.7em;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -49,11 +47,10 @@ h1 a,
 h2 a,
 h3 a {
     font-family: Alef, sans-serif;
-    color: #be6083;
+    color: #e83086;
 }
 h1,
 h2 {
-    font-weight: normal;
     line-height: 1.07;
 }
 h1:first-line,
@@ -122,6 +119,7 @@ header {
     right: 0;
     background-color: #fff;
     border-bottom: 1px solid #ededed;
+    box-shadow: 0 0.8em 3em -1.7em rgba(0,0,0,.4);
 }
 nav {
     display: flex;
@@ -130,7 +128,6 @@ nav {
     text-align: left;
     white-space: nowrap;
     vertical-align: top; /* IE too big padding */
-    background-color: #fff;
 }
 nav a {
     display: inline-block;
@@ -139,6 +136,7 @@ nav a {
     padding: 1em 1.4em;
     margin-top: auto;
     color: #22598f;
+    color: #244a70;
     vertical-align: bottom;
 }
 nav a:hover,
@@ -149,7 +147,7 @@ nav a:focus,
     background-color: #f9f9f9;
 }
 nav .active.active {
-    color: #be6083;
+    color: #e83086;
 }
 nav .active:after {
     content: "";
@@ -162,7 +160,7 @@ nav .active:after {
     background-color: currentcolor;
 }
 nav .active.logo img {
-    filter: hue-rotate(100deg);
+    filter: hue-rotate(110deg);
 }
 .logo {
     flex-grow: 1;
@@ -256,15 +254,14 @@ main [id]:target:before {
     display: grid;
     grid-gap: 1.2em;
     grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-    /* grid-auto-rows: minmax(13em, auto); */
     margin-top: 1.2em;
 }
 .item {
     overflow: hidden;
-    /* display: grid; */
     position: relative;
     padding: .6em 3em 2.8em;
     background-color: #fff;
+    box-shadow: 0 .8em 3em -1.7em rgba(0,0,0,.4);
 }
 .grid .item.span {
     grid-column: 1 / -1;
@@ -284,13 +281,11 @@ main [id]:target:before {
     margin: -.6em -3em 0;
     object-fit: cover;
     object-position: top;
-    /* object-position: bottom; */
 }
 .item .sheet {
     width: calc(100% + 6em);
     margin-right: -3em;
     margin-left: -3em;
-    /* align-self: end; */
 }
 .item .column:first-child {
     padding-right: 3em;
@@ -414,7 +409,7 @@ time {
 }
 .profile .figure {
     padding-right: 0;
-    padding-left: .6em;
+    padding-left: 4.6em;
     vertical-align: middle;
 }
 .profile .image {
@@ -434,6 +429,7 @@ time {
 
 
 .masonry {
+    margin-top: 2.25em;
     -webkit-column-width: 13em; /* Android 4.4.4 */
             column-width: 13em;
     -webkit-column-gap: 1em;
