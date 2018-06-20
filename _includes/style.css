@@ -258,16 +258,6 @@ main [id]:target:before {
     /* grid-auto-rows: minmax(13em, auto); */
     margin-top: 1.2em;
 }
-.grid.user {
-    grid-template-columns: repeat(auto-fit, minmax(7.6em, 1fr));
-}
-.grid.user .media {
-    width: 100%;
-        height: 8.5em;
-    min-height: 8.5em;
-    object-fit: cover;
-    image-orientation: from-image;
-}
 .item {
     overflow: hidden;
     /* display: grid; */

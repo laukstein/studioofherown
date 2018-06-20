@@ -5,6 +5,26 @@ order: 2
 category: artist
 title: אמניות
 css: |
+    .grid.user {
+        grid-template-columns: repeat(auto-fit, minmax(7.6em, 1fr));
+    }
+    .grid.user .item {
+        overflow: visible;
+        padding: .6em 1em 1em;
+        transition: box-shadow .1s;
+    }
+    .grid.user .item:hover,
+    .grid.user .item:focus {
+        box-shadow: 0 0 3.5em -.7em rgba(0,0,0,.4);
+    }
+    .grid.user .media {
+            width: 100%;
+        min-width: calc(100% + 2em);
+            height: 8.5em;
+        min-height: 8.5em;
+        margin: -.6em -1em .5em;
+        object-fit: contain;
+    }
     .badge {
         position: absolute;
         bottom: -.2em;
