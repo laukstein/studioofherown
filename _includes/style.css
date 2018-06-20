@@ -177,6 +177,7 @@ nav .active.logo img {
 .logo img {
         width: 7em;
     min-width: 3.5em;
+    transition: height 60ms;
 }
 footer {
     overflow: hidden;
@@ -202,6 +203,7 @@ main {
     min-height: 100vh;
     padding-top: 9.5em;
     padding-bottom: 6.5em;
+    transition: padding-top 60ms;
     -webkit-user-select: text; /* Safari legacy */
        -moz-user-select: text;
         -ms-user-select: text;
@@ -512,6 +514,14 @@ time {
         text-overflow: clip;
         -webkit-mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333); /* Chrome legacy */
                 mask: linear-gradient(to right, rgba(51,51,51,0), #333 1.5em, #333);
+    }
+}
+@media (max-width: 840px) {
+    .logo img {
+        height: 63px !important;
+    }
+    main {
+        padding-top: 4.5em;
     }
 }
 @media (max-width: 720px) {

@@ -2,14 +2,19 @@
 layout: compress
 style:
     - style.css
+script:
+    - core.js
 ---
 
-{% include core.html %}{% include core-head.html %}<input class=bar-holder id=bar type=checkbox hidden>
+{%
+    include core.html %}{%
+    include core-head.html
+%}<input class=bar-holder id=bar type=checkbox hidden>
 <header dir=ltr>
     <div class=wrapper>
         <label class=bar for=bar hidden><span></span></label>
         <nav class=nav-container dir=rtl>
-            <a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><img src={{ site.assets }}logo.png width=126 height=126 alt="{{ site.title }}"></a>{% assign pages = site.pages | sort: "order" %}{%
+            <a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><img id=logo src={{ site.assets }}logo.png width=126 height=126 alt="{{ site.title }}"></a>{% assign pages = site.pages | sort: "order" %}{%
         for nav in pages %}{%
             if nav.header and nav.title
                 %}<a{% if nav.url == page.url or nav.category == page.layout %} class=active{% endif %} href="{{ nav.url | relative_url }}">{{ nav.title }}</a>{%
@@ -20,9 +25,13 @@ style:
     </div>
 </header>
 <main>
-{{ content }}</main>
-{% include core-footer.html %}{% if jekyll.environment == "dev" %}<script>
+{{ content }}</main>{%
+    include core-footer.html %}{%
+    include core-js.html %}{%
+    if jekyll.environment == "dev" %}<script>
 if ("{{ file }}") console.log("file", "{{ file }}");
 if ("{{ category }}") console.log("category", "{{ category }}");
 if ("{{ inRoot }}") console.log("inRoot", "{{ inRoot }}");
-</script>{% endif %}
+</script>{%
+    endif
+%}
