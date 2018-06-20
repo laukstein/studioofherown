@@ -8,7 +8,7 @@
     }
 
     sticky.el = document.getElementById("logo");
-    sticky.naturalHeight = sticky.el && sticky.el.naturalHeight;
+    sticky.naturalHeight = 126; // sticky.el && sticky.el.naturalHeight;
     sticky.minHeight = 63;
     sticky.diff = sticky.naturalHeight - sticky.minHeight;
 
