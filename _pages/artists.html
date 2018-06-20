@@ -4,12 +4,27 @@ header: true
 order: 2
 category: artist
 title: אמניות
+css: |
+    .badge {
+        position: absolute;
+        bottom: -.2em;
+        left: -.2em;
+        width: 1.5em;
+        height: 1.5em;
+        color: #fff;
+        font-weight: bold;
+        line-height: 1.4;
+        font-family: Alef, sans-serif;
+        text-align: center;
+        background-color: #aaa;
+        border-radius: 50%;
+    }
 ---
 
 <div class="box grid user">{% assign pages=site.pages | sort: "title" %}{%
     for item in pages %}{%
         if item.layout == page.category %}
-    <a href="{{ item.url }}" title="{{ item.title }}">
+    <a class=item href="{{ item.url }}" title="{{ item.title }}">
         {%
         assign profile = "/assets" | append: item.url | append: "/profile.jpg" %}{%
         for image in site.static_files %}{%
@@ -18,7 +33,20 @@ title: אמניות
             endif %}{%
         endfor %}
         <div class=title>{{ item.title }}</div>
-        <span class=field>{{ item.field }}</span>
+        <span class=field>{{ item.field }}</span>{%
+        assign A = item.title | replace: "-", " " %}{%
+        assign count = 0 %}{%
+        for page in pages %}{%
+            if page.layout == "exhibition" and page.participators %}{%
+                for participator in page.participators %}{%
+                    assign B = participator | replace: "-", " " %}{%
+                    if A == B %}{%
+                        assign count = count | plus: 1 %}{%
+                    endif %}{%
+                endfor %}{%
+            endif %}{%
+        endfor %}
+        <div class=badge>{{ count }}</div>
     </a>{%
         endif %}{%
     endfor %}
