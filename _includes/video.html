@@ -3,7 +3,7 @@
     assign id = item.link | remove_first: "https://www.youtube.com/watch?v=" | split: "&" | first %}{%
     if item.link contains "&t=" %}{% assign time = item.link | split: "&t=" | last | remove: "s" %}{% endif %}
     {% if include.full %}<div class="media video">
-        <iframe src="https://www.youtube.com/embed/{{ id }}{% if time %}?start={{ time }}&{% else %}?{% endif %}showinfo=0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/{{ id }}{% if time %}?start={{ time }}&{% else %}?{% endif %}showinfo=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
     </div>{% else %}
     <a href="{{ item.url }}"><img class=media src=https://img.youtube.com/vi/{{ id }}/0.jpg alt="{{ item.title }}"></a>{%
     endif %}{%
