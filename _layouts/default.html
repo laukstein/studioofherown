@@ -13,14 +13,15 @@ script:
 <header dir=ltr>
     <div class=wrapper>
         <label class=bar for=bar hidden><span></span></label>
-        <nav class=nav-container dir=rtl>
-            <a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><img id=logo src={{ site.assets }}logo.png width=126 height=126 alt="{{ site.title }}"></a>{% assign pages = site.pages | sort: "order" %}{%
+        <nav dir=rtl>
+            {% assign pages = site.pages | sort: "order" %}{%
         for nav in pages %}{%
             if nav.header and nav.title
                 %}<a{% if nav.url == page.url or nav.category == page.layout %} class=active{% endif %} href="{{ nav.url | relative_url }}">{{ nav.title }}</a>{%
             endif %}{%
         endfor %}
         </nav>
+        <a class="logo{% if page.url == "/" %} active{% endif %}" href="/"><img id=logo src={{ site.assets }}logo.png width=126 height=126 alt="{{ site.title }}"></a>
         <label class="bar-close absolute" id=bar-close for=bar hidden></label>
     </div>
 </header>
