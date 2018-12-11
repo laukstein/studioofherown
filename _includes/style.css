@@ -724,6 +724,7 @@ time {
     font-family: Alef;
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local("Alef Regular"),
         local("Alef-Regular"),
         url(/assets/fonts/alef-regular-hebrew.woff2) format("woff2"),
@@ -735,6 +736,7 @@ time {
     font-family: Alef;
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local("Alef Regular"),
         local("Alef-Regular"),
         url(/assets/fonts/alef-regular-latin.woff2) format("woff2"),
@@ -746,6 +748,7 @@ time {
     font-family: Alef;
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: local("Alef Bold"),
         local("Alef-Bold"),
         url(/assets/fonts/alef-bold-hebrew.woff2) format("woff2"),
@@ -757,6 +760,7 @@ time {
     font-family: Alef;
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: local("Alef Bold"),
         local("Alef-Bold"),
         url(/assets/fonts/alef-bold-latin.woff2) format("woff2"),
