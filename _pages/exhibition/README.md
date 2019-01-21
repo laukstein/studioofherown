@@ -6,11 +6,11 @@ Poster image [assets/exhibition](assets/exhibition)/*yyyy-mm-dd*.jpg
 
     ---
     layout: exhibition
-    title
-    text
-    curator
-    address
-    participators
+    title: 
+    text: 
+    curator: 
+    address: 
+    participators:
       - artist
       - artist
       - artist
