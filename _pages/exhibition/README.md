@@ -1,4 +1,4 @@
-YAML schema
+### YAML schema
 
 File name [_pages/exhibition](_pages/exhibition)/*yyyy-mm-dd*.md
 
