@@ -7,6 +7,6 @@ Poster image [assets/publication](https://github.com/studioofherown/studioofhero
     ---
     layout: publication
     title: 
-    link: 
+    link: link
     text: 
     ---
