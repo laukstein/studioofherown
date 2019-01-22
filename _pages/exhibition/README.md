@@ -2,7 +2,7 @@
 
 File name [_pages/exhibition](_pages/exhibition)/*yyyy-mm-dd*.md
 
-Poster image [assets/exhibition](https://github.com/studioofherown/studioofherown.github.io/tree/master/assets/exhibition)/*yyyy-mm-dd*.jpg width 700px
+Poster image [assets/exhibition](https://github.com/studioofherown/studioofherown.github.io/tree/master/assets/exhibition)/*yyyy-mm-dd*.jpg (width 700px, use https://tinyjpg.com to compress images)
 
     ---
     layout: exhibition
