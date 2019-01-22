@@ -38,5 +38,3 @@ Poster image [assets/exhibition](https://github.com/studioofherown/studioofherow
       - חני כהן זדה
     catalog: link
     ---
-
-P.S. artist names [_pages/artist](_pages/artist)
