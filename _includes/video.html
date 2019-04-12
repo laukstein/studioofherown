@@ -5,6 +5,6 @@
     {% if include.full %}<div class="media video">
         <iframe src="https://www.youtube.com/embed/{{ id }}{% if time %}?start={{ time }}{% endif %}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
     </div>{% else %}
-    <a href="{{ item.url }}"><img class=media src=https://img.youtube.com/vi/{{ id }}/0.jpg alt="{{ item.title }}"></a>{%
+    <a href="{{ item.url }}"><img class=media src=https://i.ytimg.com/vi/{{ id }}/0.jpg alt="{{ item.title }}"></a>{%
     endif %}{%
 endif %}
