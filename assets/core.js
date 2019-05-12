@@ -8,10 +8,21 @@
     }
 
     sticky.el = document.getElementById("logo");
-    sticky.naturalHeight = 126; // sticky.el && sticky.el.naturalHeight;
+    // sticky.el && sticky.el.naturalHeight;
+    sticky.naturalHeight = 126;
     sticky.minHeight = 63;
     sticky.diff = sticky.naturalHeight - sticky.minHeight;
 
     window.addEventListener("scroll", sticky);
     sticky();
+
+
+    // Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+        dataLayer.push(arguments);
+    };
+
+    gtag("js", new Date());
+    gtag("config", "UA-140023036-1");
 }());
