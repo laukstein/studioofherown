@@ -5,7 +5,9 @@
     assign l10n = site.data.l10n.exhibition %}{%
     if include.full %}{% assign h = "h1" %}{% elsif include.short %}{% assign h = "h3" %}{% else %}{% assign h = "h2" %}{% endif %}{%
     if include.hideImage == nil %}{%
-        assign poster = "/assets" | append: item.url | append: ".jpg" %}{%
+        assign poster = item.url | remove_first: "/" | remove_first: page.lang | append: ".jpg" %}{%
+        assign poster = poster | prepend: "/assets" %}{%
+
         for image in site.static_files %}{%
             if image.path contains poster %}
     <a href={{ item.url }}><img class="media{% if include.imageClassName %} {{ include.imageClassName }}{% endif %}" src={{ poster }} alt="{{ item.title }}"></a>{%
@@ -29,7 +31,7 @@
                 when "address" %}<a href="https://www.google.com/maps/search/{{ item[locale.name] | replace: " ", "+" }}" target=_blank>{{ item[locale.name] }}</a>{%
                 when "participators" %}{%
                     assign participators = "" | split: "" %}{%
-                    assign pages = site.pages | sort: "title" %}{%
+                    assign pages = site.pages | where: "lang", page.lang | sort: "title" %}{%
 
                     for participator in item[locale.name] %}{%
                         assign profile = nil %}{%

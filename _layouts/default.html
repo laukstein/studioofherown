@@ -14,7 +14,8 @@ script:
     <div class=wrapper>
         <label class=bar for=bar hidden><span></span></label>
         <nav dir=rtl>
-            {% assign pages = site.pages | sort: "order" %}{%
+            {% assign pages = site.pages | where: "lang", page.lang | sort: "order" %}{%
+
         for nav in pages %}{%
             if nav.header and nav.title
                 %}<a{% if nav.url == page.url or nav.category == page.layout %} class=active{% endif %} href="{{ nav.url | relative_url }}">{{ nav.title }}</a>{%
@@ -25,10 +26,18 @@ script:
         <label class="bar-close absolute" id=bar-close for=bar hidden></label>
     </div>
 </header>
-<main>{{ content }}</main>{%
+<main>
+{% for doc in site.multilanguage %}
+  <div>
+    doc.name = {{ doc.name }}
+    doc.lang = {{ doc.lang }}
+  </div>
+{% endfor %}
+{{ content }}</main>{%
     include core-footer.html %}{%
     include core-js.html %}{%
     if jekyll.environment == "dev" %}<script>
+console.log("{{ page.lang }}");
 if ("{{ file }}") console.log("file", "{{ file }}");
 if ("{{ category }}") console.log("category", "{{ category }}");
 if ("{{ inRoot }}") console.log("inRoot", "{{ inRoot }}");

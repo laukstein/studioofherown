@@ -3,6 +3,8 @@ url: https://studioofherown.com
 enforce_ssl: studioofherown.com
 permalink: /:category/:title
 assets: /assets/
+github: [metadata]
+repository: studioofherown/studioofherown.github.io
 timezone: UTC
 safe: true
 theme: false
@@ -11,6 +13,29 @@ collections:
     pages:
         output: true
         permalink: /:path
+        lang: en
+langs:
+    - en
+    - he
+defaults:
+    -
+        scope:
+            path: ""
+            type: pages
+        values:
+            lang: en
+    -
+        scope:
+            path: _pages/en
+            type: pages
+        values:
+            lang: en
+    -
+        scope:
+            path: _pages/he
+            type: pages
+        values:
+            lang: he
 markdown: kramdown
 kramdown:
     input: GFM
@@ -31,4 +56,5 @@ exclude:
     - LICENSE
     - node_modules
     - /*README.md
+    - .*
     - ~*

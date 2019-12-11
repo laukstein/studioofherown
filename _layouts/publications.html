@@ -1,15 +1,13 @@
 ---
 layout: default
-title: כתבות
-header: true
-order: 4
 category: publication
 ---
 
 <div class=grid>
-{% assign pages = site.pages | sort: "date" | reverse %}{%
+{% assign pages = site.pages | where: "lang", page.lang | sort: "date" | reverse %}{%
+
 for item in pages %}{%
-    if item.layout == page.category %}{%
+    if item.layout == layout.category %}{%
         include publication.html data = item %}{%
     endif %}{%
 endfor %}

@@ -9,13 +9,16 @@ css: |
 
 {% assign l10n = site.data.l10n.artist
 %}<ul class="sheet profile">{%
-    assign profile = "/assets" | append: page.url | append: "/profile.jpg" %}{%
+    assign profile = page.url | remove_first: "/" | remove_first: page.lang | append: "/profile.jpg" %}{%
+    assign profile = profile | prepend: "/assets" %}{%
+
     for image in site.static_files %}{%
         if image.path contains profile %}
     <li class="column figure"><div class="column image" style="background-image:url({{ profile }})"></div></li>{%
     endif %}{%
-endfor %}{% assign pages = site.pages | sort: "date" | reverse %}{%
+endfor %}{%
 
+assign pages = site.pages | where: "lang", page.lang | sort: "date" | reverse %}{%
 assign participations = layout.array %}{%
 assign A = page.title | replace: "-", " " %}{%
 for item in pages %}{%
@@ -69,7 +72,8 @@ if page.statement contains "
 else %}<p>{{ page.statement }}</p>{%
 endif %}
 <div class=list hidden>{%
-assign pages = site.pages | sort: "title" %}{%
+assign pages = site.pages | where: "lang", page.lang | sort: "title" %}{%
+
 for artist in pages %}{%
     if artist.layout == "artist" %}
     <a{% if page.url == artist.url %} class=active{% endif %} href={{ artist.url | prepend: site.baseurl }}>{{ artist.title }}</a>{%
@@ -77,7 +81,7 @@ for artist in pages %}{%
 endfor %}
 </div>{%
 
-capture assets %}/assets{{ page.url }}{% endcapture %}{%
+capture assets %}/assets{{ page.url | remove_first: "/" | remove_first: page.lang }}{% endcapture %}{%
 assign index = 0 %}
 <div class=masonry>{%
 for image in site.static_files %}{%

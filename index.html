@@ -6,7 +6,7 @@ description: סטודיו משלך הוא מיזם חברתי-מגדרי הפו�
 <h1>חדש בגלריית סטודיו משלך</h1>
 
 {%
-assign pages = site.pages | sort: "date" | reverse %}{%
+assign pages = site.pages | where: "lang", page.lang | sort: "date" | reverse %}{%
 assign index = 0 %}{%
 assign max = 4 %}
 <div class=grid>{%
@@ -32,11 +32,11 @@ for item in pages %}{%
 endfor %}{%
 assign more = index | minus: max %}{%
 if more %}
-    <div><a class=button href=/exhibitions>קרא עוד {{ more }}</a></div>{%
+    <div><a class=button href=/{{ page.lang }}/exhibitions>קרא עוד {{ more }}</a></div>{%
 endif %}
 </div>{%
 
-assign pages = site.pages | sort: "date" | reverse %}{%
+assign pages = site.pages | where: "lang", page.lang | sort: "date" | reverse %}{%
 assign index = 0 %}
 <h2>כתבות</h2>
 <div class=grid>{%

@@ -1,15 +1,13 @@
 ---
 layout: default
-header: true
-order: 3
 category: exhibition
-title: תערוכות
 ---
 
 <div class=grid>
-{% assign pages = site.pages | sort: "date" | reverse %}{%
+{% assign pages = site.pages | where: "lang", page.lang | sort: "date" | reverse %}{%
+
 for item in pages %}{%
-    if item.layout == page.category %}{%
+    if item.layout == layout.category %}{%
         include exhibition.html data = item %}{%
     endif %}{%
 endfor %}

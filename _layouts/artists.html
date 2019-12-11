@@ -1,9 +1,6 @@
 ---
 layout: default
-header: true
-order: 2
 category: artist
-title: אמניות
 css: |
     .grid.user {
         grid-template-columns: repeat(auto-fit, minmax(7.6em, 1fr));
@@ -41,12 +38,16 @@ css: |
     }
 ---
 
-<div class="box grid user">{% assign pages=site.pages | sort: "title" %}{%
+<div class="box grid user">{%
+    assign pages=site.pages | where: "lang", page.lang | sort: "title" %}{%
+
     for item in pages %}{%
-        if item.layout == page.category %}
+        if item.layout == layout.category %}
     <a class=item href="{{ item.url }}" title="{{ item.title }}">
         {%
-        assign profile = "/assets" | append: item.url | append: "/profile.jpg" %}{%
+        assign profile = item.url | remove_first: "/" | remove_first: page.lang | append: "/profile.jpg" %}{%
+        assign profile = profile | prepend: "/assets" %}{%
+
         for image in site.static_files %}{%
             if image.path contains profile %}
         <img class=media src={{ profile }} alt="{{ item.title }}">{%
@@ -56,6 +57,7 @@ css: |
         <span class=field>{{ item.field }}</span>{%
         assign A = item.title | replace: "-", " " %}{%
         assign count = 0 %}{%
+
         for page in pages %}{%
             if page.layout == "exhibition" and page.participators %}{%
                 for participator in page.participators %}{%
