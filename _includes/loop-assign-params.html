@@ -1,0 +1,5 @@
+{% if include.obj %}
+    {% for item in include.obj %}
+        {% include assign-params.html obj = item %}
+    {% endfor %}
+{% endif %}

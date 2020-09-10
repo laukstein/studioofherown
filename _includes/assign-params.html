@@ -1,0 +1,6 @@
+{% if include.obj %}{%
+    capture itemCategory %}{%
+        assign diff = include.obj.url | remove_first: "/" | remove: include.obj.slug %}{%
+        if diff.size %}{{ include.obj.url | remove: include.obj.slug | remove: "/" }}{% endif %}{%
+        assign diff = "" %}{% endcapture %}{%
+endif %}
